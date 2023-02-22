@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using LinqTutorial.MethodSyntax;
 
 namespace LinqTutorial
@@ -13,7 +15,7 @@ namespace LinqTutorial
             //All.Run();
             //Count.Run();
             //Contains.Run();
-            OrderBy.Run();
+            //+OrderBy.Run();
             //MinMax.Run();
             //Average.Run();
             //Sum.Run();
@@ -46,7 +48,34 @@ namespace LinqTutorial
             //GroupBy.QuerySyntax.Run();
             //Joins.QuerySyntax.Run();
 
+            var numbers = new[] {5, 9, 2, 12};
+            bool isAnyLarger = numbers.Any(x => x > 10);
+            Console.WriteLine(isAnyLarger);
             Console.ReadKey();
+        }
+
+
+         
+        public static bool IsAnyWordUpperCase(IEnumerable<string> word)
+        {
+            bool areAllUpperCase = true;
+            foreach (string word2 in word)
+            {
+                foreach (var letter in word2)
+                {
+                    if (char.IsLower(letter))
+                    {
+                        areAllUpperCase = false;
+                    }
+
+                    if (areAllUpperCase)
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+            return false;
         }
     }
 }

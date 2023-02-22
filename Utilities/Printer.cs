@@ -46,7 +46,7 @@ namespace Utilities
 
         public static void Print<TKey, TValue>(Dictionary<TKey, TValue> dictionary, string dictionaryName)
         {
-            Console.WriteLine($"{dictionaryName}:");
+            Console.WriteLine($"{dictionaryName}:"); 
             if (dictionary.Any())
             {
                 Console.WriteLine(string.Join("\n", dictionary.Select(
